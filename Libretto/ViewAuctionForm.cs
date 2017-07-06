@@ -26,7 +26,8 @@ namespace Libretto
             priceLabel.Text = auction.PricePerUnit.ToString();
             descriptionLabel.Text = auction.Description;
             sellerLabel.Text = auction.Creator.Username;
-            photoPictureBox.Image = (Bitmap)((new ImageConverter()).ConvertFrom(auction.Image));
+            if(auction.Image != null)
+                photoPictureBox.Image = (Bitmap)((new ImageConverter()).ConvertFrom(auction.Image));
 
             this.auction = auction;
             
